@@ -20,10 +20,10 @@ classDiagram
 
     class Creator
     <<interface>> Creator
-    Creator : CreateSquad()
+    Creator : CreateSquad() []Member
 
     Creator <|-- PiratesGang
-    PiratesGang : CreateSquad()
+    PiratesGang : CreateSquad() []Member
     Creator <|-- KnightsPlatoon
-    KnightsPlatoon : CreateSquad()
+    KnightsPlatoon : CreateSquad() []Member
 ```
