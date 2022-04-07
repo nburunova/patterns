@@ -1,4 +1,4 @@
-# Abstract method
+# Factory method
 
 ```mermaid
 classDiagram

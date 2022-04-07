@@ -2,16 +2,9 @@ package main
 
 import (
 	"fmt"
-	"patterns/observer/config"
+	"patterns/observer/config_example/config"
 	"time"
 )
-
-type Observable interface {
-	Add(o config.ConfigObserver)
-	Remove(o config.ConfigObserver)
-	Notify()
-	UpdateCAFile(newFile string) 
-}
 
 func main() {
 	observable := config.NewConfigManager()

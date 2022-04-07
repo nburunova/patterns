@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"patterns/abstract_method/knights"
-	"patterns/abstract_method/pirates"
+	"patterns/factory_method/knights"
+	"patterns/factory_method/pirates"
 )
 
 func main() {

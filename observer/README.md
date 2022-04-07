@@ -6,13 +6,13 @@
 classDiagram
     class Observable
     <<interface>> Observable
-    Observable : Add(Observable o)
-    Observable : Remove(Observable o)
+    Observable : Add(Observer o)
+    Observable : Remove(Observer o)
     Observable : Notify()
 
     Observable <|-- ConcreteObservable
-    ConcreteObservable : Add(Observable o)
-    ConcreteObservable : Remove(Observable o)
+    ConcreteObservable : Add(Observer o)
+    ConcreteObservable : Remove(Observer o)
     ConcreteObservable : Notify()
     ConcreteObservable : GetState()
 
@@ -37,13 +37,13 @@ classDiagram
 classDiagram
     class Observable
     <<interface>> Observable
-    Observable : Add(Observable o)
-    Observable : Remove(Observable o)
+    Observable : Add(Observer o)
+    Observable : Remove(Observer o)
     Observable : Notify()
 
     Observable <|-- ConcreteObservable
-    ConcreteObservable : Add(Observable o)
-    ConcreteObservable : Remove(Observable o)
+    ConcreteObservable : Add(Observer o)
+    ConcreteObservable : Remove(Observer o)
     ConcreteObservable : Notify()
 
     class Observer

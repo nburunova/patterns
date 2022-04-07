@@ -3,12 +3,8 @@ package config
 import (
 	"sync/atomic"
 	"sync"
+	"patterns/observer/config_example"
 )
-
-type Observer interface {
-	ID() int
-	Update(caFile string)
-}
 
 type Config struct {
 	CAFile atomic.Value
@@ -22,24 +18,24 @@ func NewConfig() *Config {
 
 type ConfigManager struct {
 	cfg *Config
-	observers []Observer
+	observers []config_example.Observer
 	observersMu sync.Mutex
 }
 
 func NewConfigManager() *ConfigManager {
 	return &ConfigManager{
 		cfg: NewConfig(),
-		observers: make([]Observer, 0),
+		observers: make([]config_example.Observer, 0),
 	}
 }
 
-func (m *ConfigManager) Add(o Observer) {
+func (m *ConfigManager) Add(o config_example.Observer) {
 	m.observersMu.Lock()
 	defer m.observersMu.Unlock()
 	m.observers = append(m.observers, o)
 }
 
-func (m *ConfigManager) Remove(o Observer) {
+func (m *ConfigManager) Remove(o config_example.Observer) {
 	m.observersMu.Lock()
 	defer m.observersMu.Unlock()
 	for i, obs := range m.observers {
